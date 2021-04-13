@@ -2,7 +2,7 @@ pipeline {
   agent any
 
    environment {
-     //CI = true
+     CI = false
      DOCKER_TAG = getDockerTag()
    }
 
