@@ -10,7 +10,7 @@ pipeline {
     //stage pertama
     stage ('Install Dependencies react project'){
       steps{
-        echo "Start install dependencies react project"
+        echo "Start install dependencies react projects"
         sh "npm install"
       }
     }
