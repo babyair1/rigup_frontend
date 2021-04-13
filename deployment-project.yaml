@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: project-akhir-namespace
+  name: kubernetes-frontend
+  labels:
+    app: project-akhir-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: project-akhir-frontend
+  template:
+    metadata:
+      name: kubernetes-frontend
+      labels:
+        app: project-akhir-frontend
+    spec:
+      containers:
+        - name: project-akhir-frontend
+          image: sendykris/rigup_frontend:tagVersion
+          ports:
+            - containerPort: 80
+# ---
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: svc-myreact-app
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     app: react-app
+#   ports:
+#     - port: 80
+#       targetPort: 80
